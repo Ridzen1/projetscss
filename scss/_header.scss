@@ -19,6 +19,12 @@
         flex-wrap: wrap;
         gap: 10px;
         width: 100%;
+        border: none;
+
+        button {
+            border: none;
+            border-radius: 25px;
+        }
     }
 
     // Connexion prend toute la largeur sur mobile
@@ -29,11 +35,42 @@
         color: white;
         padding: 10px;
         border: none;
-        border-radius: 5px;
         text-align: center;
         box-sizing: border-box;
     }
+
+    .languages {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        input[type="radio"] {
+            display: none; // cache les radios
+        }
+
+        label {
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: gray;
+            transition: all 0.3s ease;
+            font-weight: normal;
+
+            // effet hover
+            &:hover {
+                color: black;
+            }
+        }
+
+        // quand un input est coché, le label associé change de style
+        input[type="radio"]:checked+label {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+    }
 }
+
 
 
 // Zone Principale (Masthead - Logo, Recherche, Slogan)
@@ -46,6 +83,10 @@
 
     h1 {
         margin: 0 0 10px 0;
+        img {
+            max-width: 60%;
+            height: auto;
+        }
     }
 
     // Conteneur de la recherche et du slogan (qui s'empilent et sont centrés)
@@ -58,8 +99,36 @@
     }
 
     .search-box {
-        width: 90%; // Rendre le champ de recherche large sur mobile
-        margin: 10px 0;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+
+        input {
+            width: 100%;
+            padding: 10px 50px 10px 15px; // espace à droite pour la loupe
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            border: none;
+            padding: 0;
+            background: none; // plus de fond gris
+            overflow: hidden; // évite tout dépassement
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // remplit totalement le bouton
+                display: block;
+            }
+        }
     }
 
     h3 {
@@ -87,6 +156,7 @@
         // "En kiosques" réapparaît
         span:first-child {
             display: inline;
+            color: grey;
         }
 
         // On groupe les boutons avec "En kiosques" à gauche
@@ -115,32 +185,50 @@
             width: auto;
         }
     }
-    
+
 
 
     // Zone Principale (Masthead)
     .masthead {
-        flex-direction: row; // Alignement horizontal
-        justify-content: space-between; // Logo à gauche, zone droite à droite
-        align-items: flex-end; // Alignement par le bas
-        text-align: left; // Rétablir l'alignement à gauche pour le logo
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; // verticalement centré
+        text-align: left;
+        gap: 20px; // un peu d’espace entre les deux colonnes
 
+        // --- Logo à gauche ---
         h1 {
-            margin: 0; // Le logo est aligné à gauche
+            flex: 1 1 50%; // prend la moitié
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
         }
 
+        // --- Zone recherche + slogan à droite ---
         .right-area {
-            // Permet à la zone droite de se coller à droite
+            flex: 1 1 50%; // l’autre moitié
+            display: flex;
             flex-direction: column;
-            align-items: flex-end; // Alignement à droite des éléments empilés
-            text-align: right; // Texte aligné à droite
-            width: auto; // Reprend seulement l'espace nécessaire
-        }
+            align-items: flex-end; // aligné à droite
+            text-align: right;
 
-        .search-box {
-            width: auto; // Largeur par défaut
+            .search-box {
+                width: 80%; // tu peux ajuster à ton goût
+                margin-bottom: 5px;
+            }
+
+            h3 {
+                margin: 0;
+                font-style: italic;
+            }
         }
     }
+
 
 
     // Navigation Principale (Main-Nav)
@@ -149,8 +237,8 @@
 
         ul {
             // Les styles de listes et bordures
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
+            border-top: 1px dashed #ccc;
+            border-bottom: 1px dashed #ccc;
             list-style: none;
             padding: 0;
             margin-right: 1em;

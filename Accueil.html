@@ -12,7 +12,6 @@
 </head>
 
 <header class="site-header">
-
     <div class="top-bar">
         <div class="left-group">
             <span>En kiosques : octobre 2017</span>
@@ -21,11 +20,16 @@
                 <button>Abonnement</button>
                 <button>Faire un don</button>
 
-                <span class="languages">
-                    <button>fr</button> |
-                    <button>en</button> |
-                    <button>+</button>
-                </span>
+                <div class="languages">
+                    <input type="radio" id="lang-fr" name="lang" checked>
+                    <label for="lang-fr">fr</label>
+
+                    <input type="radio" id="lang-en" name="lang">
+                    <label for="lang-en">en</label>
+
+                    <input type="radio" id="lang-plus" name="lang">
+                    <label for="lang-plus">+</label>
+                </div>
             </div>
         </div>
 
@@ -37,14 +41,16 @@
             <img src="image/diplo-accueil-images/logofficiel-simple.png" alt="Le Monde Diplomatique Logo">
         </h1>
 
-        <form class="search-box" action="">
-            <input type="text" placeholder="Rechercher..." />
-            <button type="submit">
-                <img src="image/icones/loupe.png" alt="Rechercher">
-            </button>
-        </form>
+        <div class="right-area">
+            <form class="search-box" action="">
+                <input type="text" placeholder="Rechercher..." />
+                <button type="submit">
+                    <img src="image/icones/loupe.png" alt="Rechercher">
+                </button>
+            </form>
 
-        <h3>Mensuel critique d'informations et d'analyses</h3>
+            <h3>Mensuel critique d'informations et d'analyses</h3>
+        </div>
     </div>
 
     <nav class="main-nav">
