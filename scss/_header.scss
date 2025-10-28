@@ -1,0 +1,180 @@
+@import 'variables';
+
+.top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    background-color: #f7f7f7;
+    gap: 10px;
+
+    // "En kiosques" caché sur mobile
+    span:first-child {
+        display: none;
+    }
+
+    // Conteneur des boutons
+    .top-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    // Connexion prend toute la largeur sur mobile
+    .connexion {
+        display: block;
+        width: 100%;
+        background-color: #3e6d8a;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+
+// Zone Principale (Masthead - Logo, Recherche, Slogan)
+.masthead {
+    display: flex;
+    flex-direction: column; // Les éléments sont empilés verticalement
+    align-items: center; // Tous les éléments sont centrés
+    text-align: center;
+    padding: 10px 0;
+
+    h1 {
+        margin: 0 0 10px 0;
+    }
+
+    // Conteneur de la recherche et du slogan (qui s'empilent et sont centrés)
+    .right-area {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .search-box {
+        width: 90%; // Rendre le champ de recherche large sur mobile
+        margin: 10px 0;
+    }
+
+    h3 {
+        margin: 5px 0 0 0;
+        font-style: italic;
+    }
+}
+
+
+// Navigation Principale (Main-Nav)
+.main-nav {
+    display: none; // La navigation principale est cachée par défaut (mobile)
+}
+
+
+// --- Requête Média pour Desktop (min-width: 600px) ---
+@media (min-width: $breakpoint-tablette) {
+
+    // Barre Supérieure
+    .top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        // "En kiosques" réapparaît
+        span:first-child {
+            display: inline;
+        }
+
+        // On groupe les boutons avec "En kiosques" à gauche
+        .left-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        // On place connexion à droite
+        .connexion {
+            display: inline-block;
+            width: auto;
+            margin-left: auto; // pousse le bouton à droite
+            background-color: #3e6d8a;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 25px;
+        }
+
+        // Ajustement des boutons
+        .top-actions {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            width: auto;
+        }
+    }
+    
+
+
+    // Zone Principale (Masthead)
+    .masthead {
+        flex-direction: row; // Alignement horizontal
+        justify-content: space-between; // Logo à gauche, zone droite à droite
+        align-items: flex-end; // Alignement par le bas
+        text-align: left; // Rétablir l'alignement à gauche pour le logo
+
+        h1 {
+            margin: 0; // Le logo est aligné à gauche
+        }
+
+        .right-area {
+            // Permet à la zone droite de se coller à droite
+            flex-direction: column;
+            align-items: flex-end; // Alignement à droite des éléments empilés
+            text-align: right; // Texte aligné à droite
+            width: auto; // Reprend seulement l'espace nécessaire
+        }
+
+        .search-box {
+            width: auto; // Largeur par défaut
+        }
+    }
+
+
+    // Navigation Principale (Main-Nav)
+    .main-nav {
+        display: block; // Afficher la navigation principale sur desktop
+
+        ul {
+            // Les styles de listes et bordures
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            li {
+                padding: 0;
+                margin: 0;
+            }
+
+            a {
+                display: block;
+                padding: 10px 0;
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    text-decoration: none;
+                    font-style: normal;
+                    color: black;
+                }
+            }
+        }
+    }
+}

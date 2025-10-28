@@ -1,0 +1,29 @@
+@import 'variables';
+
+body {
+    width: 100%;
+    background: white;
+
+    @media screen and (min-width: $breakpoint-tablette) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+html {
+    background: repeating-linear-gradient(to bottom,
+            #eeeeee 0 12.5%,
+            #e0dede 12.5% 25%,
+            #d2cfcf 25% 37.5%,
+            #c4c0c0 37.5% 50%,
+            #b7b1b1 50% 62.5%,
+            #a9a1a1 62.5% 75%,
+            #9b9292 75% 87.5%,
+            #918787 87.5% 100%);
+
+
+}
