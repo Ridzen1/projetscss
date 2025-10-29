@@ -1,0 +1,136 @@
+@import 'variables';
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    .article_image,
+    .article {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: #1b1b1b;
+            margin-bottom: 0.25rem;
+        }
+
+        h4 {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 0.75rem;
+
+            img {
+                width: 14px;
+                height: 14px;
+                vertical-align: middle;
+                margin-left: 0.25rem;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #333;
+        }
+    }
+}
+
+/* -------- VERSION DESKTOP -------- */
+@media screen and (min-width: $breakpoint-desktop) {
+    .container.articles-part1 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 2rem;
+        align-items: start;
+
+        /* Xi Jinping à gauche : 2 colonnes sur 3 lignes */
+        .article_image:first-of-type {
+            grid-column: 1 / 3;
+            grid-row: 1 / 4;
+        }
+
+        /* 3 petits articles au centre */
+        .article:nth-of-type(2) {
+            grid-column: 3 / 4;
+            grid-row: 1;
+        }
+
+        .article:nth-of-type(3) {
+            grid-column: 3 / 4;
+            grid-row: 2;
+        }
+
+        .article:nth-of-type(4) {
+            grid-column: 3 / 4;
+            grid-row: 3;
+        }
+
+        /* Complotisme à droite : 2 colonnes sur 3 lignes */
+        .article_image:last-of-type {
+            grid-column: 4 / 6;
+            grid-row: 1 / 4;
+        }
+
+        /* Nettoyage visuel */
+        .article,
+        .article_image {
+            border: none;
+            padding: 0;
+        }
+
+    }
+
+    .container.articles-part2 {
+        display: grid; /* ⬅️ CHANGÉ : De flex à grid */
+        grid-template-columns: repeat(6, 1fr); /* ⬅️ AJOUTÉ : 6 colonnes de taille égale */
+        grid-template-rows: repeat(9, auto); /* ⬅️ AJOUTÉ : 9 lignes de hauteur automatique */
+        gap: 2rem; /* Espacement entre les cellules de la grille */
+        align-items: start; /* Les éléments se collent en haut de leur cellule */
+
+        .article_image,
+        .article {
+            border: none;
+            padding: 0;
+        }
+
+        /* 🎯 Article de couverture : 2 colonnes sur 9 lignes */
+        .article_image:first-of-type {
+            grid-column: 1 / 3; /* ⬅️ De la colonne 1 à la colonne 3 (soit 2 colonnes) */
+            grid-row: 1 / 10; /* ⬅️ De la ligne 1 à la ligne 10 (soit les 9 lignes) */
+        }
+        
+        /* Ajustement des autres articles pour qu'ils se placent dans les 4 colonnes restantes */
+        .article_image:nth-of-type(2) { /* Cuba, étonnante usine à cerveau */
+            grid-column: 3 / 7; /* Prend 4 colonnes (3, 4, 5, 6) */
+            grid-row: 1; /* Sur la première ligne */
+        }
+
+        /* Les autres articles doivent maintenant être positionnés manuellement */
+        /* ou laissés en flux naturel sur les colonnes 3 à 6, ligne par ligne. */
+        
+        /* Exemple : ajustons le 2ème article */
+        
+        /* ... Le reste des articles doit être positionné en fonction de la grille 3/7 ... */
+
+        /* Nettoyage visuel */
+        .article,
+        .article_image {
+            border: none;
+            padding: 0;
+        }
+    }
+}
