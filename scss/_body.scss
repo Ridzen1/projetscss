@@ -4,10 +4,21 @@ body {
     width: 100%;
     background: white;
 
+    main>section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        max-width: 1300px;
+        margin-right: 5rem;
+        margin-left: 5rem;
+    }
+
     @media screen and (min-width: $breakpoint-tablette) {
         width: 80%;
         margin: 0 auto;
     }
+
     @media screen and (min-width: $breakpoint-desktop) {
         width: 60%;
         margin: 0 auto;
@@ -24,6 +35,4 @@ html {
             #a9a1a1 62.5% 75%,
             #9b9292 75% 87.5%,
             #918787 87.5% 100%);
-
-
 }

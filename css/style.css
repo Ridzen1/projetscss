@@ -3,6 +3,15 @@ body {
   width: 100%;
   background: white;
 }
+body main > section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1300px;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
 @media screen and (min-width: 44em) {
   body {
     width: 80%;
@@ -228,14 +237,6 @@ html {
     color: black;
   }
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
 .container .article_image,
 .container .article {
   background: #fff;
@@ -278,22 +279,25 @@ html {
 
 /* -------- VERSION DESKTOP -------- */
 @media screen and (min-width: 64em) {
+  .article,
+  .article_image {
+    border: none;
+    padding: 0;
+  }
   .container.articles-part1 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(3, auto);
     gap: 2rem;
     align-items: start;
-    /* Xi Jinping à gauche : 2 colonnes sur 3 lignes */
   }
   .container.articles-part1 .article_image:first-of-type {
+    /* Xi Jinping à gauche : 2 colonnes sur 3 lignes */
     grid-column: 1/3;
     grid-row: 1/4;
   }
-  .container.articles-part1 {
-    /* 3 petits articles au centre */
-  }
   .container.articles-part1 .article:nth-of-type(2) {
+    /* 3 petits articles au centre */
     grid-column: 3/4;
     grid-row: 1;
   }
@@ -305,58 +309,364 @@ html {
     grid-column: 3/4;
     grid-row: 3;
   }
-  .container.articles-part1 {
-    /* Complotisme à droite : 2 colonnes sur 3 lignes */
-  }
   .container.articles-part1 .article_image:last-of-type {
+    /* Complotisme à droite : 2 colonnes sur 3 lignes */
     grid-column: 4/6;
     grid-row: 1/4;
   }
-  .container.articles-part1 {
-    /* Nettoyage visuel */
+  .container.articles-part2 {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(9, auto);
   }
-  .container.articles-part1 .article,
-  .container.articles-part1 .article_image {
-    border: none;
+  .container.articles-part2 > :nth-child(1) {
+    /* En kiosques */
+    grid-column: 1/3;
+    grid-row: 1/6;
+  }
+  .container.articles-part2 > :nth-child(2) {
+    /* Cuba, étonnante usine à cerveau */
+    grid-column: 3/5;
+    grid-row: 1/3;
+  }
+  .container.articles-part2 > :nth-child(3) {
+    /* La société catalane se rallie à l'indépendance */
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+  .container.articles-part2 > :nth-child(4) {
+    /* Tentations séparatistes en Europe */
+    grid-column: 3/5;
+    grid-row: 4/5;
+  }
+  .container.articles-part2 > :nth-child(5) {
+    /* États en miettes dans l'Europe des régions */
+    grid-column: 3/5;
+    grid-row: 5/6;
+  }
+  .container.articles-part2 > :nth-child(6) {
+    /* Le socialisme de l'uppercut */
+    grid-column: 5/7;
+    grid-row: 1/3;
+  }
+  .container.articles-part2 > :nth-child(7) {
+    /* Bataille africaine... */
+    grid-column: 5/7;
+    grid-row: 3/6;
+  }
+  .container.articles-part2 > :nth-child(8) {
+    /* Macron ou le service de la classe */
+    grid-column: 3/4;
+    grid-row: 6/7;
+  }
+  .container.articles-part2 > :nth-child(9) {
+    /* Le TNP */
+    grid-column: 3/4;
+    grid-row: 7/8;
+  }
+  .container.articles-part2 > :nth-child(10) {
+    /* Classe sans risque */
+    grid-column: 4/7;
+    grid-row: 6/9;
+  }
+  .container.articles-part3 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(5, auto);
+  }
+  .container.articles-part3 > :nth-child(1) {
+    /* extension du domaine */
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  .container.articles-part3 > :nth-child(2) {
+    /* franc CFA */
+    grid-column: 1/2;
+    grid-row: 3/5;
+  }
+  .container.articles-part3 > :nth-child(3) {
+    /* Europe en retard */
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .container.articles-part3 > :nth-child(4) {
+    /* certaine idée de la France */
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .container.articles-part3 > :nth-child(5) {
+    /* socialisme selon Che Guevara */
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .container.articles-part3 > :nth-child(6) {
+    /* Faites vos jeux */
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  .container.articles-part3 > :nth-child(7) {
+    /* Comment Monsanto vend les OGM */
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+  .container.articles-part3 > :nth-child(8) {
+    /* EN KIOSQUES */
+    grid-column: 3/4;
+    grid-row: 1/4;
+  }
+  .container.articles-part3 > :nth-child(9) {
+    /* jeune Karl Marx*/
+    grid-column: 3/4;
+    grid-row: 4/6;
+  }
+}
+/* Styles de base (mobile first) */
+.cartes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ✅ centre les enfants horizontalement */
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.cartes h1 {
+  width: 100%;
+  text-align: center;
+  /* ✅ pour centrer le titre */
+  margin-bottom: 1rem;
+}
+.cartes .article_image {
+  width: 100%;
+  /* ✅ occupe toute la largeur sur mobile */
+  max-width: 500px;
+  /* ✅ limite pour éviter que ça s’étale trop */
+  text-align: center;
+  /* ✅ centre le texte */
+}
+.cartes .article_image .article_image > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 64em) {
+  .cartes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Garder wrap, mais la base de calcul l'empêchera */
+    justify-content: flex-start;
+    gap: 2rem;
+    /* Optionnel : S'assurer que le conteneur ne grandit pas au-delà de sa taille max si nécessaire */
+    /* width: 100%; */
+  }
+  .cartes .article_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 350px;
+    /* CORRECTION CLÉ : Réduction de la base de calcul pour contrer les arrondis */
+    /* Formule : 25% - (3 * 2rem / 4) - 0.5px = 25% - 1.5rem - 0.5px */
+    flex: 0 1 calc(25% - 3 * 2rem / 4 - 0.5px);
+    /* 💡 Important : Forcer flex-grow à 0 pour éviter qu'il ne s'étire au-delà du besoin */
+    flex-grow: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+.kiosques {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.kiosques h1 {
+  width: 100%;
+  text-align: center;
+}
+.kiosques .article_image {
+  display: flex;
+  flex-direction: column; /* mobile : image au-dessus du texte */
+  gap: 2rem;
+  align-items: center;
+  border: none;
+}
+.kiosques .article_image > img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+.kiosques .article_image .article_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.kiosques .article_image h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+.kiosques .article_image p {
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+.kiosques .article_image h4:last-of-type {
+  color: #cc0000;
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
+}
+.kiosques {
+  /* Desktop */
+}
+@media screen and (min-width: 64em) {
+  .kiosques .article_image {
+    flex-direction: row; /* image à gauche, texte à droite */
+    align-items: flex-start;
+  }
+  .kiosques .article_image > img {
+    width: 30%;
+  }
+  .kiosques .article_image .article_content {
+    flex: 1; /* prend le reste de l'espace */
+  }
+}
+
+.livres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.livres h1 {
+  text-align: left;
+  width: 100%;
+  font-size: 1.8rem;
+}
+.livres h1 span {
+  color: red;
+}
+.livres h4 {
+  width: 100%;
+  font-weight: normal;
+  line-height: 1.4;
+  text-align: left;
+}
+.livres h4 span {
+  color: red;
+}
+.livres h4:last-of-type {
+  text-align: right;
+}
+.livres .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  justify-items: center;
+  align-items: start;
+  gap: 1.5rem;
+  width: 100%;
+}
+.livres img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+/* Styles de base (Mobile First: Empilement vertical) */
+.blogs {
+  display: flex;
+  flex-direction: column; /* Les articles sont empilés */
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.blogs h1 {
+  /* Style du titre */
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: left; /* Alignement du titre à gauche comme dans l'image mobile */
+  margin-bottom: 1rem;
+}
+.blogs h1 span {
+  color: red;
+}
+.blogs .article_image {
+  /* Conteneur de chaque article - prend toute la largeur sur mobile */
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd; /* Séparateur visible dans l'image mobile */
+  padding-bottom: 1rem;
+  /* Pour empiler l'image au-dessus du texte sur mobile */
+  display: flex;
+  flex-direction: column;
+}
+.blogs .article_image > img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.blogs .article_image h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+.blogs .article_image h4 {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
+}
+.blogs .article_image h4 strong {
+  font-weight: 300;
+}
+.blogs .article_image h4 span {
+  color: #4b4a4a;
+}
+.blogs .article_image p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* -------- VERSION DESKTOP - 4 Colonnes Horizontales -------- */
+@media screen and (min-width: 64em) {
+  .blogs {
+    display: grid; /* Utiliser Grid pour un alignement en 4 colonnes très fiable */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .blogs h1 {
+    grid-column: 1/5; /* Le titre prend les 4 colonnes */
+    text-align: left; /* Aligné à gauche comme dans l'image desktop */
+    width: auto;
+  }
+  .blogs .article_image {
+    /* L'élément est maintenant géré par la grille (1fr) */
+    width: auto;
+    border: none; /* Supprimer la bordure de séparation */
     padding: 0;
+    /* Flexbox Interne : Aligner l'image et le texte côte à côte */
+    display: flex;
+    flex-direction: column; /* Réinitialiser pour que les éléments de l'article s'empilent */
+    align-items: flex-start; /* Aligner le contenu au sommet de la cellule de grille */
   }
-  .container.articles-part2 {
-    display: grid; /* ⬅️ CHANGÉ : De flex à grid */
-    grid-template-columns: repeat(6, 1fr); /* ⬅️ AJOUTÉ : 6 colonnes de taille égale */
-    grid-template-rows: repeat(9, auto); /* ⬅️ AJOUTÉ : 9 lignes de hauteur automatique */
-    gap: 2rem; /* Espacement entre les cellules de la grille */
-    align-items: start; /* Les éléments se collent en haut de leur cellule */
+  .blogs .article_image > img {
+    /* L'image doit prendre toute la largeur de la cellule de grille */
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    margin-bottom: 1rem;
   }
-  .container.articles-part2 .article_image,
-  .container.articles-part2 .article {
-    border: none;
-    padding: 0;
-  }
-  .container.articles-part2 {
-    /* 🎯 Article de couverture : 2 colonnes sur 9 lignes */
-  }
-  .container.articles-part2 .article_image:first-of-type {
-    grid-column: 1/3; /* ⬅️ De la colonne 1 à la colonne 3 (soit 2 colonnes) */
-    grid-row: 1/10; /* ⬅️ De la ligne 1 à la ligne 10 (soit les 9 lignes) */
-  }
-  .container.articles-part2 {
-    /* Ajustement des autres articles pour qu'ils se placent dans les 4 colonnes restantes */
-  }
-  .container.articles-part2 .article_image:nth-of-type(2) { /* Cuba, étonnante usine à cerveau */
-    grid-column: 3/7; /* Prend 4 colonnes (3, 4, 5, 6) */
-    grid-row: 1; /* Sur la première ligne */
-  }
-  .container.articles-part2 {
-    /* Les autres articles doivent maintenant être positionnés manuellement */
-    /* ou laissés en flux naturel sur les colonnes 3 à 6, ligne par ligne. */
-    /* Exemple : ajustons le 2ème article */
-    /* ... Le reste des articles doit être positionné en fonction de la grille 3/7 ... */
-    /* Nettoyage visuel */
-  }
-  .container.articles-part2 .article,
-  .container.articles-part2 .article_image {
-    border: none;
-    padding: 0;
+  .blogs .article_image {
+    /* Ajouter ici tous les styles de texte pour le desktop si différents */
   }
 }
 

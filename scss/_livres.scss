@@ -1,0 +1,52 @@
+@import 'variables';
+
+.livres {
+    display: flex;
+    flex-direction: column;
+    align-items: center; // centre le contenu horizontalement
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    h1 {
+        text-align: left;
+        width: 100%;
+        font-size: 1.8rem;
+
+        span {
+            color: $rouge; // couleur principale (rouge du Diplo par ex.)
+        }
+    }
+
+    h4 {
+        width: 100%;
+        font-weight: normal;
+        line-height: 1.4;
+        text-align: left;
+
+        span {
+            color: $rouge;
+        }
+
+        &:last-of-type {
+            text-align: right;
+        }
+    }
+
+    .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); // grille fluide
+            justify-items: center;
+            align-items: start;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+        
+    }
+}
