@@ -1,0 +1,94 @@
+@import 'variables';
+
+.archives {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-size;
+
+    h1 {
+        font-size: 1.5rem;
+        color: $noir;
+        text-align: left;
+        margin-bottom: $gap-size / 2;
+
+        span {
+            color: $rouge;
+        }
+    }
+
+    .grille_archive {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-size;
+
+        .article {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+
+            h2 {
+                font-size: 1.3rem;
+                color: $noir;
+                margin-bottom: 0.25rem;
+            }
+
+            h4 {
+                font-size: 0.9rem;
+                color: $gris_clair;
+                font-weight: normal;
+                margin-bottom: 0.75rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: $gris_fonce;
+            }
+        }
+    }
+
+    > h2:last-of-type {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: $gap-size;
+
+        span {
+            color: $rouge;
+            font-weight: bold;
+        }
+    }
+}
+
+/* -------- VERSION DESKTOP -------- */
+@media screen and (min-width: $breakpoint-desktop) {
+    .archives {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-size;
+
+        .grille_archive {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: $gap-size;
+            align-items: start;
+
+            .article {
+                border: none;
+                padding: 0;
+            }
+
+            /* Chaque article prend une colonne distincte */
+            .article:nth-of-type(1) { grid-column: 1; }
+            .article:nth-of-type(2) { grid-column: 2; }
+            .article:nth-of-type(3) { grid-column: 3; }
+            .article:nth-of-type(4) { grid-column: 4; }
+        }
+
+        > h2:last-of-type {
+            text-align: right;
+            margin-top: $gap-size;
+        }
+    }
+}

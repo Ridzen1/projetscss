@@ -24,6 +24,9 @@ body main > section {
     margin: 0 auto;
   }
 }
+body h4 {
+  color: #666;
+}
 
 html {
   background: repeating-linear-gradient(to bottom, #eeeeee 0 12.5%, #e0dede 12.5% 25%, #d2cfcf 25% 37.5%, #c4c0c0 37.5% 50%, #b7b1b1 50% 62.5%, #a9a1a1 62.5% 75%, #9b9292 75% 87.5%, #918787 87.5% 100%);
@@ -259,7 +262,6 @@ html {
 .container .article_image h4,
 .container .article h4 {
   font-size: 0.9rem;
-  color: #666;
   font-weight: normal;
   margin-bottom: 0.75rem;
 }
@@ -418,6 +420,137 @@ html {
     /* jeune Karl Marx*/
     grid-column: 3/4;
     grid-row: 4/6;
+  }
+}
+/* --- STYLES DE BASE (mobile first) --- */
+.nous-suivre {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nous-suivre button {
+  border-radius: 6em;
+}
+.nous-suivre h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nous-suivre h1 span {
+  color: red;
+}
+.nous-suivre {
+  /* Conteneur pour les deux blocs */
+}
+.nous-suivre .grid-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nous-suivre .inscription-bloc h2 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.nous-suivre .inscription-bloc h2 span {
+  color: red;
+}
+.nous-suivre .inscription-bloc {
+  /* Formulaire d'inscription */
+}
+.nous-suivre .inscription-bloc .search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* place le bouton à droite */
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+}
+.nous-suivre .inscription-bloc .search-box input[type=text] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box; /* empêche le débordement */
+}
+.nous-suivre .inscription-bloc .search-box button[type=submit] {
+  padding: 0.75rem 1rem;
+  background: #e9e9d9;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4b4a4a;
+}
+.nous-suivre .inscription-bloc .lien-inscription {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.nous-suivre .amis-bloc {
+  border-top: 1px dashed #ccc;
+  padding-top: 2rem;
+}
+.nous-suivre .amis-bloc p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.nous-suivre .amis-bloc p span {
+  color: red;
+  font-weight: bold;
+}
+.nous-suivre .amis-bloc img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+}
+
+/* --- VERSION DESKTOP --- */
+@media screen and (min-width: 64em) {
+  .nous-suivre {
+    padding: 2rem 1rem;
+  }
+  .nous-suivre .grid-bloc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+  .nous-suivre .inscription-bloc {
+    padding-right: 2rem;
+    border-right: 1px dashed #666;
+  }
+  .nous-suivre .amis-bloc {
+    border-top: none;
+    padding-top: 0;
+  }
+  .nous-suivre .amis-bloc img {
+    max-width: 250px;
+    width: auto;
+  }
+  .nous-suivre {
+    /* Formulaire horizontal */
+  }
+  .nous-suivre .search-box {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nous-suivre .search-box input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 0;
+  }
+  .nous-suivre .search-box button {
+    width: 150px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background: #e9e9d9;
   }
 }
 /* Styles de base (mobile first) */
@@ -622,11 +755,10 @@ html {
 }
 .blogs .article_image h4 {
   font-size: 0.9rem;
-  color: #666;
   font-weight: normal;
 }
 .blogs .article_image h4 strong {
-  font-weight: 300;
+  font-weight: normal;
 }
 .blogs .article_image h4 span {
   color: #4b4a4a;
@@ -667,6 +799,95 @@ html {
   }
   .blogs .article_image {
     /* Ajouter ici tous les styles de texte pour le desktop si différents */
+  }
+}
+.archives {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.archives h1 {
+  font-size: 1.5rem;
+  color: black;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.archives h1 span {
+  color: red;
+}
+.archives .grille_archive {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.archives .grille_archive .article {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+.archives .grille_archive .article h2 {
+  font-size: 1.3rem;
+  color: black;
+  margin-bottom: 0.25rem;
+}
+.archives .grille_archive .article h4 {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+}
+.archives .grille_archive .article p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b4a4a;
+}
+.archives > h2:last-of-type {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.archives > h2:last-of-type span {
+  color: red;
+  font-weight: bold;
+}
+
+/* -------- VERSION DESKTOP -------- */
+@media screen and (min-width: 64em) {
+  .archives {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .archives .grille_archive {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+  .archives .grille_archive .article {
+    border: none;
+    padding: 0;
+  }
+  .archives .grille_archive {
+    /* Chaque article prend une colonne distincte */
+  }
+  .archives .grille_archive .article:nth-of-type(1) {
+    grid-column: 1;
+  }
+  .archives .grille_archive .article:nth-of-type(2) {
+    grid-column: 2;
+  }
+  .archives .grille_archive .article:nth-of-type(3) {
+    grid-column: 3;
+  }
+  .archives .grille_archive .article:nth-of-type(4) {
+    grid-column: 4;
+  }
+  .archives > h2:last-of-type {
+    text-align: right;
+    margin-top: 2rem;
   }
 }
 
