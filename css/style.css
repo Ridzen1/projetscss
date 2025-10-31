@@ -891,4 +891,347 @@ html {
   }
 }
 
+.Soutenez-nous {
+  background: #fdf3dc; 
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-radius: 8px;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 850px;
+  font-family: 'Lato', sans-serif;
+}
+
+.Soutenez-nous h3 {
+  color: #00866b; 
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.Soutenez-nous p {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.Soutenez-nous .buttons-container {
+  text-align: right;
+}
+
+.Soutenez-nous button {
+  background-color: #00866b;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Soutenez-nous button:hover,
+.Soutenez-nous button:focus {
+  background-color: #006f5a;
+  transform: scale(1.05);
+  outline: none;
+}
+
+h3 {
+  color: #B5651D;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.site-footer {
+    background-color: #f0f0f0; /* gris clair */
+    padding: 40px 0;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.footer-column a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #007BFF; /* bleu au survol */
+}
+
+/* Optionnel : rendre le footer responsive */
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== TOP BAR CENTRÉE ====== */
+.top-bar {
+  background-color: #f5f5f5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px 0; /* espace vertical uniquement */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Conteneur centré */
+.top-bar__content {
+  max-width: 1200px; /* même largeur que ton contenu principal */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top-bar__left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.top-bar__left span {
+  font-size: 0.9em;
+  color: #333;
+}
+
+/* Boutons gris */
+.btn--primary,
+.btn--secondary {
+  background-color: #d9d9d9;
+  color: #000;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn--primary:hover,
+.btn--secondary:hover {
+  background-color: #c2c2c2;
+}
+
+/* Connexion à droite */
+.btn--connexion {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn--connexion:hover {
+  background-color: #e0e0e0;
+}
+
+/* Pour éviter que le header cache le contenu */
+body {
+  padding-top: 60px;
+}
+
+
+
+/* Conteneur horizontal */
+.article__header.small-image-layout {
+    display: flex;          /* permet un alignement horizontal */
+    align-items: center;    /* centre verticalement l'image avec le texte */
+    gap: 10px;              /* espace entre l'image et le texte */
+}
+
+/* Image très petite */
+.article__header.small-image-layout img {
+    width: 60px;    /* largeur réduite au maximum */
+    height: auto;   /* garde les proportions */
+    display: block;
+}
+
+/* Texte à droite */
+.article__header.small-image-layout .header-text {
+    display: flex;
+    flex-direction: column; /* titre au-dessus du meta */
+}
+
+.article__header.small-image-layout .header-text h2 {
+    margin: 0; /* supprime l'espace au-dessus et en dessous du titre */
+    font-size: 1.2rem; /* optionnel : ajuste la taille si tu veux */
+}
+
+.article__header.small-image-layout .header-text p {
+    margin: 2px 0 0 0;
+}
+
+.article__content figure {
+    margin: 1rem 0;       /* garde un peu d’espace autour */
+    width: 100%;          /* prend toute la largeur du conteneur parent */
+    max-width: 100%;      /* empêche de dépasser */
+}
+
+.article__content figure img {
+    width: 100%;          /* image responsive */
+    height: auto;         /* garde les proportions */
+    display: block;       /* supprime tout espace blanc sous l'image */
+}
+
+.article__content figure figcaption {
+    font-size: 0.85rem;   /* optionnel : taille plus petite pour la légende */
+    margin-top: 0.25rem;
+}
+
+.article__content h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article__content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.article__content .article__author {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.article__content figure figcaption {
+    font-size: 0.9rem;
+}
+
+.dropcap {
+    font-size: 8rem;       
+    color: rgb(198, 124, 6);
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+}
+
+.article__content p {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-footer .footer-column a {
+    position: relative;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.site-footer .footer-column a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #504d4d;
+    font-size: 0.9em;
+    line-height: 1;
+}
+
+.site-footer .footer-column a:hover {
+    color: #007BFF;
+}
+
+.site-footer .footer-column a:hover::before {
+    color: #007BFF;
+}
+
+.references ol {
+    counter-reset: ref-counter;  /* on initialise le compteur */
+    list-style: none;            /* on enlève les chiffres par défaut */
+    padding-left: 0;
+}
+
+.references ol li {
+    counter-increment: ref-counter;  /* on incrémente pour chaque ligne */
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2rem;              /* espace pour le numéro */
+}
+
+.references ol li::before {
+    content: "(" counter(ref-counter) ") ";
+    position: absolute;
+    left: 0;
+    color: #555;
+    font-weight: bold;
+}
+
+.references ol li::after {
+    content: "";
+}
+
+.references ol li {
+    color: #000;
+}
+
+.references ol li q,
+.references ol li [lang="fr"] {
+    color: red;
+}
+
+.references ol li {
+    font-size: 1rem;
+}
+
+.references ol li::first-letter {
+    font-weight: normal;
+}
+
+.references ol li {
+    font-size: 1rem;
+}
+
+.references ol li {
+    color: #000;
+}
+
+.references ol li span.quote {
+    color: red;
+}
+
+
 /*# sourceMappingURL=style.css.map */
