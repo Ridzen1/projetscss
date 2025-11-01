@@ -1,0 +1,75 @@
+.article__header.small-image-layout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    width: 60px;
+    height: auto;
+    display: block;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 2px 0 0 0;
+    }
+  }
+}
+
+.article__content {
+  figure {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article__author {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .dropcap {
+    font-size: 8rem;
+    color: rgb(198, 124, 6);
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+  }
+}

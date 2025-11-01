@@ -1,0 +1,16 @@
+.tags {
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    margin: 0.2rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    font-size: 0.9rem;
+
+    &.brown {
+      border-color: #c49b79;
+      color: #c49b79;
+    }
+  }
+}

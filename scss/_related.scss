@@ -1,0 +1,39 @@
+.related-issues__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.related-issue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    border-radius: 4px;
+    display: block;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .title {
+      color: black;
+      font-weight: bold;
+    }
+
+    .date {
+      color: gray;
+      font-size: 0.85rem;
+    }
+  }
+}

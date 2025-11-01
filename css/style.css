@@ -136,7 +136,8 @@ html {
 .masthead .search-box button img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .masthead h3 {
@@ -430,6 +431,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  /* Conteneur pour les deux blocs */
 }
 .nous-suivre button {
   border-radius: 6em;
@@ -441,13 +443,13 @@ html {
 .nous-suivre h1 span {
   color: red;
 }
-.nous-suivre {
-  /* Conteneur pour les deux blocs */
-}
 .nous-suivre .grid-bloc {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.nous-suivre .inscription-bloc {
+  /* Formulaire d'inscription */
 }
 .nous-suivre .inscription-bloc h2 {
   font-size: 1.1rem;
@@ -455,9 +457,6 @@ html {
 }
 .nous-suivre .inscription-bloc h2 span {
   color: red;
-}
-.nous-suivre .inscription-bloc {
-  /* Formulaire d'inscription */
 }
 .nous-suivre .inscription-bloc .search-box {
   display: flex;
@@ -513,6 +512,7 @@ html {
 @media screen and (min-width: 64em) {
   .nous-suivre {
     padding: 2rem 1rem;
+    /* Formulaire horizontal */
   }
   .nous-suivre .grid-bloc {
     display: grid;
@@ -530,9 +530,6 @@ html {
   .nous-suivre .amis-bloc img {
     max-width: 250px;
     width: auto;
-  }
-  .nous-suivre {
-    /* Formulaire horizontal */
   }
   .nous-suivre .search-box {
     flex-direction: row;
@@ -619,6 +616,7 @@ html {
   padding: 1rem;
   max-width: 1300px;
   margin: 0 auto;
+  /* Desktop */
 }
 .kiosques h1 {
   width: 100%;
@@ -654,9 +652,6 @@ html {
   font-weight: bold;
   text-align: right;
   width: 100%;
-}
-.kiosques {
-  /* Desktop */
 }
 @media screen and (min-width: 64em) {
   .kiosques .article_image {
@@ -789,6 +784,7 @@ html {
     display: flex;
     flex-direction: column; /* Réinitialiser pour que les éléments de l'article s'empilent */
     align-items: flex-start; /* Aligner le contenu au sommet de la cellule de grille */
+    /* Ajouter ici tous les styles de texte pour le desktop si différents */
   }
   .blogs .article_image > img {
     /* L'image doit prendre toute la largeur de la cellule de grille */
@@ -796,9 +792,6 @@ html {
     height: auto;
     flex-shrink: 0;
     margin-bottom: 1rem;
-  }
-  .blogs .article_image {
-    /* Ajouter ici tous les styles de texte pour le desktop si différents */
   }
 }
 .archives {
@@ -865,13 +858,11 @@ html {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     align-items: start;
+    /* Chaque article prend une colonne distincte */
   }
   .archives .grille_archive .article {
     border: none;
     padding: 0;
-  }
-  .archives .grille_archive {
-    /* Chaque article prend une colonne distincte */
   }
   .archives .grille_archive .article:nth-of-type(1) {
     grid-column: 1;
@@ -890,37 +881,324 @@ html {
     margin-top: 2rem;
   }
 }
+.article__header.small-image-layout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.article__header.small-image-layout img {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+.article__header.small-image-layout .header-text {
+  display: flex;
+  flex-direction: column;
+}
+.article__header.small-image-layout .header-text h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.article__header.small-image-layout .header-text p {
+  margin: 2px 0 0 0;
+}
+
+.article__content figure {
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 100%;
+}
+.article__content figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.article__content figure figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+.article__content h3 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.article__content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.article__content .article__author {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.article__content .dropcap {
+  font-size: 8rem;
+  color: rgb(198, 124, 6);
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+}
+
+.related-issues__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.related-issue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.related-issue img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 4px;
+  display: block;
+}
+.related-issue figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.related-issue figcaption .title {
+  color: black;
+  font-weight: bold;
+}
+.related-issue figcaption .date {
+  color: gray;
+  font-size: 0.85rem;
+}
+
+.subscription {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+  /* --- Responsive Subscription --- */
+}
+.subscription__restricted {
+  text-align: left;
+  color: #709cad;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+.subscription__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0 3rem;
+}
+.subscription__block {
+  padding: 1.5rem;
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+.subscription__block button {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.subscription__block:nth-child(1) {
+  background-color: #709cad;
+}
+.subscription__block:nth-child(2) {
+  background-color: #add3e2;
+}
+.subscription__block.no-subscription {
+  grid-column: 1/-1;
+  background-color: #ededed;
+  padding: 1rem;
+}
+.subscription__block.no-subscription button {
+  background-color: #666;
+}
+@media (max-width: 900px) {
+  .subscription__restricted {
+    font-size: 1.6rem;
+    margin-left: 1.5rem;
+  }
+  .subscription__actions {
+    grid-template-columns: 1fr;
+    margin: 0 1.5rem;
+  }
+  .subscription__block {
+    flex-direction: column;
+    text-align: center;
+  }
+  .subscription__block button {
+    margin-top: 1rem;
+  }
+  .subscription__block.no-subscription {
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .subscription__restricted {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
+  .subscription__block {
+    padding: 1rem;
+  }
+  .subscription__block button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+.article__footer {
+  text-align: right;
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  color: #7c7a7a;
+}
+
+.site-footer {
+  background-color: #f5f5f5;
+  padding: 2.5rem 3rem;
+  font-family: "Lato", sans-serif;
+  /* Responsive : 2 colonnes sur écrans moyens, 1 sur petits écrans */
+}
+.site-footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.site-footer .footer-column {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-column h3 {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.site-footer .footer-column li {
+  margin-bottom: 0.6rem;
+}
+.site-footer .footer-column a {
+  position: relative;
+  padding-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+.site-footer .footer-column a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #504d4d;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.site-footer .footer-column a:hover {
+  color: #007BFF;
+}
+.site-footer .footer-column a:hover::before {
+  color: #007BFF;
+}
+@media (max-width: 950px) {
+  .site-footer .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .site-footer .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tags .tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin: 0.2rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 0.9rem;
+}
+.tags .tag.brown {
+  border-color: #c49b79;
+  color: #c49b79;
+}
+
+.references ol {
+  counter-reset: ref-counter;
+  list-style: none;
+  padding-left: 0;
+}
+.references ol li {
+  counter-increment: ref-counter;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1rem;
+  color: #000;
+}
+.references ol li::before {
+  content: "(" counter(ref-counter) ") ";
+  position: absolute;
+  left: 0;
+  color: #555;
+  font-weight: bold;
+}
+.references ol li q, .references ol li[lang=fr] {
+  color: red;
+}
+.references ol li span.quote {
+  color: red;
+}
 
 .Soutenez-nous {
-  background: #fdf3dc; 
+  background: #fdf3dc;
   text-align: center;
   padding: 2.5rem 1rem;
   border-radius: 8px;
   margin: 3rem auto;
   width: 90%;
   max-width: 850px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  /* --- Responsive Soutenez-nous --- */
 }
-
 .Soutenez-nous h3 {
-  color: #00866b; 
+  color: #00866b;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-
 .Soutenez-nous p {
   color: #222;
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
-
 .Soutenez-nous .buttons-container {
   text-align: right;
 }
-
-.Soutenez-nous button {
+.Soutenez-nous .buttons-container button {
   background-color: #00866b;
   color: #fff;
   border: none;
@@ -932,435 +1210,38 @@ html {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.Soutenez-nous button:hover,
-.Soutenez-nous button:focus {
+.Soutenez-nous .buttons-container button:hover, .Soutenez-nous .buttons-container button:focus {
   background-color: #006f5a;
   transform: scale(1.05);
   outline: none;
 }
-
-h3 {
-  color: #B5651D;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.site-footer {
-    background-color: #f0f0f0; /* gris clair */
-    padding: 40px 0;
-    color: #333;
-    font-family: Arial, sans-serif;
-}
-
-.footer-columns {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.footer-column {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #000;
-}
-
-.footer-column a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 6px;
-    transition: color 0.2s ease;
-}
-
-.footer-column a:hover {
-    color: #007BFF; /* bleu au survol */
-}
-
-/* Optionnel : rendre le footer responsive */
 @media (max-width: 768px) {
-    .footer-columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .Soutenez-nous h3 {
+    font-size: 1.6rem;
+  }
+  .Soutenez-nous p {
+    font-size: 1rem;
+  }
+  .Soutenez-nous .buttons-container {
+    text-align: center;
+  }
+  .Soutenez-nous .buttons-container button {
+    width: 100%;
+    max-width: 250px;
+  }
 }
-
 @media (max-width: 480px) {
-    .footer-columns {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ====== TOP BAR CENTRÉE ====== */
-.top-bar {
-  background-color: #f5f5f5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 5px 0; /* espace vertical uniquement */
-  border-bottom: 1px solid #ddd;
-}
-
-/* Conteneur centré */
-.top-bar__content {
-  max-width: 1200px; /* même largeur que ton contenu principal */
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.top-bar__left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.top-bar__left span {
-  font-size: 0.9em;
-  color: #333;
-}
-
-/* Boutons gris */
-.btn--primary,
-.btn--secondary {
-  background-color: #d9d9d9;
-  color: #000;
-  border: 1px solid #bfbfbf;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn--primary:hover,
-.btn--secondary:hover {
-  background-color: #c2c2c2;
-}
-
-/* Connexion à droite */
-.btn--connexion {
-  background-color: transparent;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn--connexion:hover {
-  background-color: #e0e0e0;
-}
-
-/* Pour éviter que le header cache le contenu */
-body {
-  padding-top: 60px;
-}
-
-
-
-/* Conteneur horizontal */
-.article__header.small-image-layout {
-    display: flex;          /* permet un alignement horizontal */
-    align-items: center;    /* centre verticalement l'image avec le texte */
-    gap: 10px;              /* espace entre l'image et le texte */
-}
-
-/* Image très petite */
-.article__header.small-image-layout img {
-    width: 60px;    /* largeur réduite au maximum */
-    height: auto;   /* garde les proportions */
-    display: block;
-}
-
-/* Texte à droite */
-.article__header.small-image-layout .header-text {
-    display: flex;
-    flex-direction: column; /* titre au-dessus du meta */
-}
-
-.article__header.small-image-layout .header-text h2 {
-    margin: 0; /* supprime l'espace au-dessus et en dessous du titre */
-    font-size: 1.2rem; /* optionnel : ajuste la taille si tu veux */
-}
-
-.article__header.small-image-layout .header-text p {
-    margin: 2px 0 0 0;
-}
-
-.article__content figure {
-    margin: 1rem 0;       /* garde un peu d’espace autour */
-    width: 100%;          /* prend toute la largeur du conteneur parent */
-    max-width: 100%;      /* empêche de dépasser */
-}
-
-.article__content figure img {
-    width: 100%;          /* image responsive */
-    height: auto;         /* garde les proportions */
-    display: block;       /* supprime tout espace blanc sous l'image */
-}
-
-.article__content figure figcaption {
-    font-size: 0.85rem;   /* optionnel : taille plus petite pour la légende */
-    margin-top: 0.25rem;
-}
-
-.article__content h3 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.article__content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.article__content .article__author {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.article__content figure figcaption {
+  .Soutenez-nous {
+    padding: 1.5rem 0.5rem;
+  }
+  .Soutenez-nous h3 {
+    font-size: 1.4rem;
+  }
+  .Soutenez-nous p {
+    font-size: 0.95rem;
+  }
+  .Soutenez-nous .buttons-container button {
     font-size: 0.9rem;
-}
-
-.dropcap {
-    font-size: 8rem;       
-    color: rgb(198, 124, 6);
-    font-weight: bold;
-    float: left;
-    line-height: 1;
-    margin-right: 0.1em;
-}
-
-.article__content p {
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.site-footer .footer-column a {
-    position: relative;
-    padding-left: 20px;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.2s ease;
-}
-
-.site-footer .footer-column a::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #504d4d;
-    font-size: 0.9em;
-    line-height: 1;
-}
-
-.site-footer .footer-column a:hover {
-    color: #007BFF;
-}
-
-.site-footer .footer-column a:hover::before {
-    color: #007BFF;
-}
-
-.references ol {
-    counter-reset: ref-counter;  /* on initialise le compteur */
-    list-style: none;            /* on enlève les chiffres par défaut */
-    padding-left: 0;
-}
-
-.references ol li {
-    counter-increment: ref-counter;  /* on incrémente pour chaque ligne */
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 2rem;              /* espace pour le numéro */
-}
-
-.references ol li::before {
-    content: "(" counter(ref-counter) ") ";
-    position: absolute;
-    left: 0;
-    color: #555;
-    font-weight: bold;
-}
-
-.references ol li::after {
-    content: "";
-}
-
-.references ol li {
-    color: #000;
-}
-
-.references ol li q,
-.references ol li [lang="fr"] {
-    color: red;
-}
-
-.references ol li {
-    font-size: 1rem;
-}
-
-.references ol li::first-letter {
-    font-weight: normal;
-}
-
-.references ol li {
-    font-size: 1rem;
-}
-
-.references ol li {
-    color: #000;
-}
-
-.references ol li span.quote {
-    color: red;
-}
-
-.tags .tag {
-    display: inline-block;
-    padding: 0.3rem 0.7rem;
-    margin: 0.2rem;
-    border-radius: 12px; /* coins arrondis */
-    border: 1px solid #e0e0e0; /* gris très clair */
-    color: #333; /* couleur du texte */
-    font-size: 0.9rem;
-}
-
-.tags .tag.brown {
-    border-color: #c49b79; /* bordure marron clair */
-    color: #c49b79; /* texte marron clair */
-}
-
-.related-issues__gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.related-issue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.related-issue img {
-    width: 100%; /* occupe toute la largeur de la colonne */
-    height: auto;
-    max-width: 250px; /* ajuste la taille des images (double de l'originale) */
-    border-radius: 4px;
-    display: block;
-}
-
-.related-issue figcaption {
-    margin-top: 0.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.related-issue figcaption .title {
-    color: black;
-    font-weight: bold;
-}
-
-.related-issue figcaption .date {
-    color: gray;
-    font-size: 0.85rem;
-}
-
-    .subscription {
-    max-width: 900px; /* largeur max pour le conteneur */
-    margin: 2rem auto;
-    font-family: sans-serif;
-}
-
-.subscription__restricted {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.subscription__actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colonnes pour les 2 premiers blocs */
-    gap: 0; /* plus d'espace entre les blocs */
-    margin: 0 3rem; /* marge à gauche et à droite */
-}
-
-.subscription__block {
-    padding: 1.5rem;
-    border-radius: 0;
-    display: flex;
-    justify-content: space-between; /* texte à gauche, bouton à droite */
-    align-items: center;            /* centrer verticalement */
-    text-align: left;
-}
-
-.subscription__block button {
-    background-color: #000;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
-
-/* Couleurs spécifiques */
-.subscription__block:nth-child(1) {
-    background-color: #709cad; /* bleu foncé */
-}
-
-.subscription__block:nth-child(2) {
-    background-color: #add3e2; /* bleu plus clair pour s'abonner */
-}
-
-.subscription__block.no-subscription {
-    grid-column: 1 / -1; /* prend toute la largeur */
-    background-color: #ededed; /* gris */
-    padding: 1rem; /* moins de hauteur */
-}
-
-
-.subscription__restricted {
-    text-align: left;          /* aligne le texte à gauche */
-    color: #709cad;            /* bleu foncé */
-    font-size: 2rem;         /* augmente la taille du texte */
-    font-weight: bold;          /* met en gras pour plus d'impact */
-    margin-bottom: 1rem;        /* espace sous le texte */
-    margin-left: 3rem;
-}
-
-.article__footer {
-    text-align: right;          /* contenu aligné à droite */
-    padding: 1rem 3rem;         /* espace autour du texte */
-    font-size: 0.9rem;          /* taille un peu plus petite */
-    color: #7c7a7a;                /* texte légèrement foncé pour contraste */
-}
-
-
-
-
-/*# sourceMappingURL=style.css.map */
+    padding: 0.6rem 1.2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
