@@ -44,7 +44,7 @@
         align-items: center;
         gap: 6px;
 
-        input[type="radio"] {
+        input {
             display: none; // cache les radios
         }
 
@@ -56,14 +56,13 @@
             transition: all 0.3s ease;
             font-weight: normal;
 
-            // effet hover
             &:hover {
                 color: black;
             }
         }
 
         // quand un input est coché, le label associé change de style
-        input[type="radio"]:checked+label {
+        input:checked+label {
             background-color: white;
             color: black;
             font-weight: bold;
@@ -73,11 +72,11 @@
 
 
 
-// Zone Principale (Masthead - Logo, Recherche, Slogan)
+// Zone Principale
 .masthead {
     display: flex;
-    flex-direction: column; // Les éléments sont empilés verticalement
-    align-items: center; // Tous les éléments sont centrés
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 10px 0;
 
@@ -120,7 +119,7 @@
             border: none;
             padding: 0;
             background: none; // plus de fond gris
-            overflow: hidden; // évite tout dépassement
+            overflow: hidden;
 
             img {
                 width: 100%;
@@ -137,6 +136,61 @@
     }
 }
 
+/* --- Bouton Burger --- */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    margin: 10px auto;
+
+    span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #333;
+        margin: 3px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+/* --- Navigation Mobile (cachée par défaut) --- */
+.main-nav {
+    display: none;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+        li {
+
+            a {
+                display: block;
+                padding: 10px;
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    background: #eee;
+                }
+            }
+        }
+    }
+
+    &.open {
+        display: block; /* affiché quand ouvert */
+    }
+}
 
 // Navigation Principale (Main-Nav)
 .main-nav {
@@ -144,7 +198,6 @@
 }
 
 
-// --- Requête Média pour Desktop (min-width: 600px) ---
 @media (min-width: $breakpoint-tablette) {
 
     // Barre Supérieure
@@ -159,14 +212,14 @@
             color: grey;
         }
 
-        // On groupe les boutons avec "En kiosques" à gauche
+        //groupe les boutons avec "En kiosques" à gauche
         .left-group {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        // On place connexion à droite
+        //place connexion à droite
         .connexion {
             display: inline-block;
             width: auto;
@@ -177,7 +230,7 @@
             border-radius: 25px;
         }
 
-        // Ajustement des boutons
+        // Ajustement boutons
         .top-actions {
             display: flex;
             flex-wrap: nowrap;
@@ -196,7 +249,7 @@
         text-align: left;
         gap: 20px; // un peu d’espace entre les deux colonnes
 
-        // --- Logo à gauche ---
+        //Logo à gauche
         h1 {
             flex: 1 1 50%; // prend la moitié
             display: flex;
@@ -218,7 +271,7 @@
             text-align: right;
 
             .search-box {
-                width: 80%; // tu peux ajuster à ton goût
+                width: 80%;
                 margin-bottom: 5px;
             }
 
@@ -236,7 +289,6 @@
         display: block; // Afficher la navigation principale sur desktop
 
         ul {
-            // Les styles de listes et bordures
             border-top: 1px dashed #ccc;
             border-bottom: 1px dashed #ccc;
             list-style: none;
@@ -265,5 +317,13 @@
                 }
             }
         }
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
     }
 }

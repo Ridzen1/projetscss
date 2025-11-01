@@ -1,11 +1,9 @@
 @import 'variables';
 
-/* Styles de base (mobile first) */
 .cartes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* ✅ centre les enfants horizontalement */
     gap: $gap-size;
     padding: 1rem;
     max-width: 1300px;
@@ -13,11 +11,8 @@
 
     .article_image {
         width: 100%;
-        /* ✅ occupe toute la largeur sur mobile */
         max-width: 500px;
-        /* ✅ limite pour éviter que ça s’étale trop */
         text-align: center;
-        /* ✅ centre le texte */
 
         .article_image>img {
             width: 100%;
@@ -34,12 +29,8 @@
     .cartes {
         flex-direction: row;
         flex-wrap: wrap;
-        /* Garder wrap, mais la base de calcul l'empêchera */
         justify-content: flex-start;
         gap: $gap-size;
-
-        /* Optionnel : S'assurer que le conteneur ne grandit pas au-delà de sa taille max si nécessaire */
-        /* width: 100%; */
     }
 
     .cartes .article_image {
@@ -47,13 +38,8 @@
         flex-direction: column;
         justify-content: flex-start;
         height: 350px;
-        /* CORRECTION CLÉ : Réduction de la base de calcul pour contrer les arrondis */
-        /* Formule : 25% - (3 * 2rem / 4) - 0.5px = 25% - 1.5rem - 0.5px */
         flex: 0 1 calc(25% - (3 * #{$gap-size} / 4) - 0.5px);
-
-        /* 💡 Important : Forcer flex-grow à 0 pour éviter qu'il ne s'étire au-delà du besoin */
         flex-grow: 0;
-
         min-width: 0;
         box-sizing: border-box;
         text-align: center;

@@ -3,21 +3,13 @@
 .livres {
     display: flex;
     flex-direction: column;
-    align-items: center; // centre le contenu horizontalement
+    align-items: center;
     gap: 2rem;
     padding: 1rem;
     max-width: 1300px;
     margin: 0 auto;
 
-    h1 {
-        text-align: left;
-        width: 100%;
-        font-size: 1.8rem;
 
-        span {
-            color: $rouge; // couleur principale (rouge du Diplo par ex.)
-        }
-    }
 
     h4 {
         width: 100%;

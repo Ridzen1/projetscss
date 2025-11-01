@@ -28,6 +28,10 @@ body {
     }
 }
 
+section{
+    border-bottom: 1px solid $bordure;
+}
+
 html {
     background: repeating-linear-gradient(to bottom,
             #eeeeee 0 12.5%,

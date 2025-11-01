@@ -1,6 +1,5 @@
 @import 'variables';
 
-/* --- STYLES DE BASE (mobile first) --- */
 .nous-suivre {
     max-width: 1300px;
     margin: 0 auto;
@@ -36,7 +35,7 @@
         .search-box {
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* place le bouton à droite */
+            align-items: flex-end;
             gap: 0.5rem;
             margin: 1rem 0 0.5rem;
 
@@ -45,7 +44,7 @@
                 padding: 0.75rem 1rem;
                 border: 1px solid #ccc;
                 font-size: 1rem;
-                box-sizing: border-box; /* empêche le débordement */
+                box-sizing: border-box; /* pour empecher le débordement */
             }
 
             button[type="submit"] {
