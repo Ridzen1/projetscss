@@ -1,0 +1,15 @@
+@import 'variables';
+
+h1 {
+    font-size: 2rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: $gap-size / 2;
+    font-weight: bold;
+    span{
+        color: $rouge;
+    }
+}
+
+
+

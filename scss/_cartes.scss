@@ -11,13 +11,6 @@
     max-width: 1300px;
     margin: 0 auto;
 
-    h1 {
-        width: 100%;
-        text-align: center;
-        /* ✅ pour centrer le titre */
-        margin-bottom: $gap-size / 2;
-    }
-
     .article_image {
         width: 100%;
         /* ✅ occupe toute la largeur sur mobile */

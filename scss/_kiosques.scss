@@ -8,11 +8,6 @@
     max-width: 1300px;
     margin: 0 auto;
 
-    h1 {
-        width: 100%;
-        text-align: center;
-    }
-
     .article_image {
         display: flex;
         flex-direction: column; /* mobile : image au-dessus du texte */
