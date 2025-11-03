@@ -1,4 +1,5 @@
 .Soutenez-nous {
+  // Bloc principal : fond clair, centré, avec padding et bord arrondi
   background: #fdf3dc;
   text-align: center;
   padding: 2.5rem 1rem;
@@ -23,7 +24,7 @@
   }
 
   .buttons-container {
-    text-align: right;
+    text-align: right; // boutons à droite
 
     button {
       background-color: #00866b;
@@ -46,36 +47,26 @@
     }
   }
 
-  /* --- Responsive Soutenez-nous --- */
+  // -------------------------------
+  // Responsive pour tablettes et mobiles
+  // -------------------------------
   @media (max-width: 768px) {
-    h3 {
-      font-size: 1.6rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
+    h3 { font-size: 1.6rem; }
+    p { font-size: 1rem; }
 
     .buttons-container {
-      text-align: center;
-
+      text-align: center; // boutons centrés sur tablette
       button {
         width: 100%;
-        max-width: 250px;
+        max-width: 250px; // limite largeur des boutons
       }
     }
   }
 
   @media (max-width: 480px) {
     padding: 1.5rem 0.5rem;
-
-    h3 {
-      font-size: 1.4rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-    }
+    h3 { font-size: 1.4rem; }
+    p { font-size: 0.95rem; }
 
     .buttons-container button {
       font-size: 0.9rem;

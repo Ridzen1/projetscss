@@ -1,6 +1,6 @@
 .references {
   ol {
-    counter-reset: ref-counter;
+    counter-reset: ref-counter; // compteur pour numérotation
     list-style: none;
     padding-left: 0;
 
@@ -13,7 +13,7 @@
       color: #000;
 
       &::before {
-        content: "(" counter(ref-counter) ") ";
+        content: "(" counter(ref-counter) ") "; // numérotation automatique
         position: absolute;
         left: 0;
         color: #555;
@@ -21,13 +21,9 @@
       }
 
       & q,
-      &[lang="fr"] {
-        color: red;
-      }
+      &[lang="fr"] { color: red; } // citations ou texte français en rouge
 
-      span.quote {
-        color: red;
-      }
+      span.quote { color: red; }
     }
   }
 }

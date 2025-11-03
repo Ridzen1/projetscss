@@ -1,30 +1,31 @@
 .related-issues__gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr); // 4 colonnes égales
+  gap: 2rem; // espace entre les colonnes et les lignes
+  max-width: 1200px; // largeur maximale de la galerie
+  margin: 0 auto; // centre la galerie horizontalement
 }
 
+// Chaque numéro de la revue liée
 .related-issue {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; // image en haut, texte en dessous
+  align-items: center;    // centre horizontalement le contenu
 
   img {
-    width: 100%;
-    height: auto;
-    max-width: 250px;
-    border-radius: 4px;
-    display: block;
+    width: 100%;       // occupe toute la largeur de sa colonne
+    height: auto;      // conserve les proportions
+    max-width: 250px;  // limite la taille maximale
+    border-radius: 4px; // coins légèrement arrondis
+    display: block;    // supprime les espaces blancs sous l'image
   }
 
   figcaption {
-    margin-top: 0.5rem;
-    text-align: center;
+    margin-top: 0.5rem; // espace entre l'image et le texte
+    text-align: center;  // texte centré
     display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    flex-direction: column; // titre au-dessus de la date
+    gap: 0.2rem; // petit écart vertical entre titre et date
 
     .title {
       color: black;
@@ -33,7 +34,7 @@
 
     .date {
       color: gray;
-      font-size: 0.85rem;
+      font-size: 0.85rem; // texte plus petit pour la date
     }
   }
 }
