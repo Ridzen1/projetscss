@@ -59,7 +59,7 @@
     }
   }
 
-  /* Responsive : 2 colonnes sur écrans moyens, 1 sur petits écrans */
+  /*2 colonnes sur écrans moyens, 1 sur petits écrans */
   @media (max-width: 950px) {
     .footer-columns {
       grid-template-columns: repeat(2, 1fr);

@@ -1,6 +1,5 @@
 @import 'variables';
 
-/* Styles de base (Mobile First: Empilement vertical) */
 .blogs {
     display: flex;
     flex-direction: column; /* Les articles sont empilés */
@@ -9,26 +8,14 @@
     max-width: 1300px;
     margin: 0 auto;
 
-    h1 {
-        /* Style du titre */
-        font-size: 1.5rem;
-        width: 100%;
-        text-align: left; /* Alignement du titre à gauche comme dans l'image mobile */
-        margin-bottom: $gap-size / 2;
-        
-        span {
-            color: $rouge; 
-        }
-    }
 
     .article_image {
-        /* Conteneur de chaque article - prend toute la largeur sur mobile */
         width: 100%;
         background: #fff;
-        border-bottom: 1px solid #ddd; /* Séparateur visible dans l'image mobile */
+        border-bottom: 1px solid #ddd;
         padding-bottom: 1rem;
         
-        /* Pour empiler l'image au-dessus du texte sur mobile */
+        /* Pour mettre l'image au-dessus du texte sur mobile */
         display: flex;
         flex-direction: column;
         
@@ -79,24 +66,20 @@
     }
 
     .blogs .article_image {
-        /* L'élément est maintenant géré par la grille (1fr) */
         width: auto;
         border: none; /* Supprimer la bordure de séparation */
         padding: 0;
 
-        /* Flexbox Interne : Aligner l'image et le texte côte à côte */
+        /*Aligner l'image et le texte côte à côte*/
         display: flex; 
-        flex-direction: column; /* Réinitialiser pour que les éléments de l'article s'empilent */
-        align-items: flex-start; /* Aligner le contenu au sommet de la cellule de grille */
+        flex-direction: column;
+        align-items: flex-start;
 
         > img {
-            /* L'image doit prendre toute la largeur de la cellule de grille */
             width: 100%;
             height: auto;
             flex-shrink: 0;
             margin-bottom: 1rem; 
         }
-
-        /* Ajouter ici tous les styles de texte pour le desktop si différents */
     }
 }

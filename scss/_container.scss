@@ -1,12 +1,12 @@
 @import 'variables';
 
 .container {
-    
+
 
     .article_image,
     .article {
         background: #fff;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $bordure;
         padding-bottom: 1rem;
 
         img {
@@ -16,14 +16,9 @@
             margin-bottom: 0.75rem;
         }
 
-        h2 {
-            font-size: 1.3rem;
-            color: #1b1b1b;
-            margin-bottom: 0.25rem;
-        }
 
         h4 {
-            font-size: 0.9rem;
+            font-size: 1.3rem;
             font-weight: normal;
             margin-bottom: 0.75rem;
 
@@ -36,9 +31,9 @@
         }
 
         p {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             line-height: 1.5;
-            color: #333;
+            color: $noir;
         }
     }
 }

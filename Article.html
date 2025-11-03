@@ -49,6 +49,12 @@
                 <img src="image/diplo-article-images/logofficiel-enlong-simple.png" alt="Le Monde Diplomatique Logo">
             </h1>
 
+            <button class="burger" aria-label="Menu principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <div class="masthead__right">
                 <form class="search-box" action="">
                     <input type="text" placeholder="Rechercher...">
@@ -329,5 +335,12 @@
             </ul>
         </div>
     </footer>
+
+    <!-- ================= JS BURGER ================= -->
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.main-nav').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

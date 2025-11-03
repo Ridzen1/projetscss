@@ -1,0 +1,38 @@
+@import 'variables';
+
+h1 {
+    font-size: 2rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: $gap-size / 2;
+    font-weight: bold;
+
+    span {
+        color: $rouge;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: $noir;
+    margin-bottom: 0.2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $noir;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+.icone_texte{
+    color: $bleu_clair;
+}
